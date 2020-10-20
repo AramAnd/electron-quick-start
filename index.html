@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
-    <!-- You can also require other files to run in this process -->
+    <head>
+        <meta charset="UTF-8">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <title>Hello World!</title>
+    </head>
+    <body>
+    <div class="main-boxes-wrapper">
+        <div class="boxes-wrapper">
+            <h3>Box - 1: works correctly when there is background content</h3>
+            <div class="boxes">
+                <div class="box box-1"></div>
+                <div class="box box-2"></div>
+            </div>
+        </div>
+        <div class="boxes-wrapper">
+            <h3>Box - 2: works correctly when there is background content</h3>
+            <div class="boxes">
+                <div class="box overflow">
+                    <div class="box-blur"></div>
+                </div>
+            </div>
+        </div>
+        <div class="boxes-wrapper no-image">
+            <h3>Box - 3: works incorrectly when there is no background content or it is transparent</h3>
+            <div class="boxes">
+                <div class="box box-1"></div>
+                <div class="box box-2"></div>
+            </div>
+        </div>
+        <div class="boxes-wrapper transparent">
+            <h3>Box - 4: works incorrectly when there is no background content or it is transparent</h3>
+            <div class="boxes">
+                <div class="box overflow">
+                    <div class="box-blur"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./renderer.js"></script>
-  </body>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    </body>
 </html>
